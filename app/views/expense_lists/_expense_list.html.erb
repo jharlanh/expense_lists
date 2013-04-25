@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Total</th>
+    <td>Actions</td>
+  </tr>
+  <tr>
+    <td><%= expense_list.name %></td>
+    <td><%= expense_list.transactions.sum(:amount) %></td>
+    <td><%= link_to "New Transaction" , new_expense_list_transaction_path(@expense_list) %> </td>
+  </tr>
+</table>
+
+<table>
+  <tr> 
+    <th>Amount<th>
+  </tr>
+    <% expense_list.transactions.each do |transaction| %>
+  <tr>
+    <td><%= transaction.amount %></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,9 @@
+<h1> Input Transactions</h1>
+
+
+
+<%= form_for [@expense_list, @transaction] do |form| %>
+	<%= render form %>
+<% end %>
+
+<%= link_to 'Back', expense_lists_path %>
